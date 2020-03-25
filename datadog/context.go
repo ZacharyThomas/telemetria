@@ -33,7 +33,7 @@ func CreateClient(namespace string, options ...statsd.Option) statsd.ClientInter
 }
 
 // Extract client from context
-func ClientFromContext(ctx context.Context) *statsd.Client {
+func ClientFromContext(ctx context.Context) *statsd.ClientInterface {
 	value := ctx.Value(statsdClient)
 	if value == nil {
 		panic("No statsd client found in context")
